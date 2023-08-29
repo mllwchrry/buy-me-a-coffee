@@ -18,12 +18,14 @@ contract BuyMeACoffee {
     }
     
     address payable owner;
+    address payable withdrawalRecipient;
 
     // List of all memos received from coffee purchases.
     Memo[] memos;
 
     constructor() {
         owner = payable(msg.sender);
+        withdrawalRecipient = payable(msg.sender);
     }
 
     /**
@@ -60,6 +62,11 @@ contract BuyMeACoffee {
      * @dev send the entire balance stored in this contract to the owner
      */
     function withdrawTips() public {
-        require(owner.send(address(this).balance));
+        require(withdrawalRecipient.send(address(this).balance));
+    }
+
+    function changeOwner(address _withdrawalRecipient) public {
+        require(msg.sender == owner, 'Only owner can modify the withdrawal recipient address');
+        withdrawalRecipient = payable(_withdrawalRecipient);     
     }
 }
