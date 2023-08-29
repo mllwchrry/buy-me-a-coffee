@@ -1,0 +1,26 @@
+{
+  "name": "buy-me-a-coffee",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "ethers": "^6.7.1",
+    "vue": "^3.2.13",
+    "web3": "^1.10.2"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "~5.0.0",
+    "typescript": "^5.2.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
